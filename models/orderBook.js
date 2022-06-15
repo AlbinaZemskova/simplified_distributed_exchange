@@ -7,6 +7,13 @@ class OrderBook {
     this.trades = trades;
   }
 
+  getOrders() {
+    return {
+      buyOrders: this.buyOrders,
+      sellOrders: this.sellOrders
+    }
+  }
+
   addBuyOrder(order) {
     let countOfBuyOrders = this.buyOrders.length;
     let i;

@@ -45,13 +45,15 @@ let amount;
      }
 
      try {
-       const result = await promisePeer(
+       const { trade, orderBook } = await promisePeer(
          'distributed_worker',
          { input: userInput, price, amount },
          { timeout: 10000 }
        );
 
-       console.log(result);
+       console.log('Trade:', trade || []);
+       console.log('Order book', orderBook || []);
+
      } catch (e) {
        console.log(e);
      }
