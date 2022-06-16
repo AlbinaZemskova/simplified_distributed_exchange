@@ -15,7 +15,7 @@ peer.init();
 const promisePeer = (...args) => {
   return new Promise((resolve, reject) =>
     peer.request(...args, (err, result) => {
-      if (!err) return reject(err);
+      if (err) return reject(err);
 
       resolve(result);
     })
